@@ -13,40 +13,6 @@ struct ProcessInfo
 ProcessInfo* processes[50];
 int procCount = 0;
 
-void FindDivisors(int start, int end)
-{
-    int maxDivs = 0;
-    int bestNum = start;
-
-    std::cout << "Поиск числа с максимальным количеством делителей:\n";
-
-    for (int i = start; i <= end; i++)
-    {
-        int divs = 0;
-        for (int j = 1; j <= i; j++)
-        {
-            if (i % j == 0)
-            {
-                divs++;
-            }
-        }
-
-        std::cout << "Число: " << i << ". Делителей: " << divs << std::endl;
-
-        if (divs > maxDivs)
-        {
-            maxDivs = divs;
-            bestNum = i;
-        }
-    }
-
-    std::cout << "Число с наибольшим количеством делителей: " << bestNum << ". Делителей: " << maxDivs << std::endl;
-
-    std::cout << "\nНажмите Enter для выхода...";
-    std::cin.get();
-    std::cin.get(); 
-}
-
 void StartProcess(std::string exeName, std::string cmdLine, std::string shortName)
 {
     if (procCount >= 50) return;
@@ -60,7 +26,7 @@ void StartProcess(std::string exeName, std::string cmdLine, std::string shortNam
     char* cmd = new char[cmdLine.length() + 1];
     strcpy_s(cmd, cmdLine.length() + 1, cmdLine.c_str());
 
-    if (!CreateProcessA(exeName.c_str(), cmd, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+    if (!CreateProcessA(exeName.c_str(), cmd, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
     {
         std::cout << "Ошибка запуска: " << GetLastError() << std::endl;
     }
@@ -93,15 +59,7 @@ int main(int argc, char* argv[])
 {
     setlocale(LC_ALL, "Russian");
 
-    bool exit = false;
-
-    if (argc == 3)
-    {
-        int start = atoi(argv[1]);
-        int end = atoi(argv[2]);
-        FindDivisors(start, end);
-        return 0;
-    }
+    bool exit = false;    
 
     while (!exit)
     {
@@ -118,7 +76,7 @@ int main(int argc, char* argv[])
             std::cout << "Программы:\n";
             std::cout << "1. taskmgr.exe\n";
             std::cout << "2. ping.exe\n";
-            std::cout << "3. sp_pract12_Savitsin.exe\n";
+            std::cout << "3. FindDivisors.exe\n";
             std::cout << "Выберите программу: ";
             int p;
             std::cin >> p;
@@ -140,12 +98,9 @@ int main(int argc, char* argv[])
                 int end;
                 std::cout << "Введите конец диапозона: ";
                 std::cin >> end;
-
-                std::string myPath = argv[0]; 
-                std::string cmd = "\"" + std::string(myPath) + "\" " + std::to_string(start) + " " + std::to_string(end);
-                StartProcess(myPath, cmd, "sp_pract12_Savitsin");
                 
-                WaitForSingleObject(processes[procCount - 1]->hProcess, INFINITE);
+                std::string cmd = "C:\\Users\\st310-02\\Desktop\\Савицин ПР-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\x64\\Debug\\FindDivisors.exe " + std::to_string(start) + " " + std::to_string(end);
+                StartProcess("C:\\Users\\st310-02\\Desktop\\Савицин ПР-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\x64\\Debug\\FindDivisors.exe", cmd, "FindDivisors");
             }
             break;
         }
