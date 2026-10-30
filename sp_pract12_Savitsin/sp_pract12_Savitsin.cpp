@@ -99,8 +99,17 @@ int main(int argc, char* argv[])
                 std::cout << "Введите конец диапозона: ";
                 std::cin >> end;
                 
-                std::string cmd = "C:\\Users\\st310-02\\Desktop\\Савицин ПР-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\x64\\Debug\\FindDivisors.exe " + std::to_string(start) + " " + std::to_string(end);
-                StartProcess("C:\\Users\\st310-02\\Desktop\\Савицин ПР-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\x64\\Debug\\FindDivisors.exe", cmd, "FindDivisors");
+                char myPath[MAX_PATH];
+                GetModuleFileNameA(NULL, myPath, MAX_PATH);
+                std::string fullPath(myPath);
+                
+                std::string folderPath = fullPath.substr(0, fullPath.find_last_of("\\/"));
+                
+                std::string targetExe = folderPath + "\\FindDivisors.exe";
+               
+                std::string cmd = "\"" + targetExe + "\" " + std::to_string(start) + " " + std::to_string(end);
+
+                StartProcess(targetExe, cmd, "FindDivisors");
             }
             break;
         }
@@ -170,7 +179,31 @@ int main(int argc, char* argv[])
         }
         case 4:
         {
-            std::cout << "Количество работающих процессов: " << procCount << std::endl;
+            int aliveCount = 0;
+            
+            for (int i = procCount - 1; i >= 0; i--)
+            {
+                DWORD exitCode;
+                GetExitCodeProcess(processes[i]->hProcess, &exitCode);
+
+                if (exitCode == STILL_ACTIVE)
+                {
+                    aliveCount++;
+                }
+                else
+                {                 
+                    CloseHandle(processes[i]->hProcess);
+                    delete processes[i];
+                 
+                    for (int j = i; j < procCount - 1; j++)
+                    {
+                        processes[j] = processes[j + 1];
+                    }
+                    procCount--;
+                }
+            }
+
+            std::cout << "Количество работающих процессов: " << aliveCount << std::endl;
             break;
         }
         case 5:

@@ -39,9 +39,7 @@ int main(int argc, char* argv[])
 
 	std::cout << "Число с наибольшим количеством делителей: " << bestNum << ". Делителей: " << maxDivs << std::endl;
 
-	std::cout << "Нажмите Enter для выхода";
-	std::cin.get();
-	std::cin.get();
+	system("pause");
 
 	return 0;
 }
