@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\",
+  "WorkspaceRootPath": "C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAFB04D2-C789-484B-844E-E3F98DD10890}|FindDivisors\\FindDivisors.vcxproj|C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CAFB04D2-C789-484B-844E-E3F98DD10890}|FindDivisors\\FindDivisors.vcxproj|solutionrelative:FindDivisors\\FindDivisors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{31E60925-EBF6-4458-A590-62014D25C433}|sp_pract12_Savitsin\\sp_pract12_Savitsin.vcxproj|C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{31E60925-EBF6-4458-A590-62014D25C433}|sp_pract12_Savitsin\\sp_pract12_Savitsin.vcxproj|solutionrelative:sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31E60925-EBF6-4458-A590-62014D25C433}|sp_pract12_Savitsin\\sp_pract12_Savitsin.vcxproj|C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{31E60925-EBF6-4458-A590-62014D25C433}|sp_pract12_Savitsin\\sp_pract12_Savitsin.vcxproj|solutionrelative:sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CAFB04D2-C789-484B-844E-E3F98DD10890}|FindDivisors\\FindDivisors.vcxproj|C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAFB04D2-C789-484B-844E-E3F98DD10890}|FindDivisors\\FindDivisors.vcxproj|solutionrelative:FindDivisors\\FindDivisors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +18,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FindDivisors.cpp",
-              "DocumentMoniker": "C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp",
+              "DocumentMoniker": "C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp",
               "RelativeDocumentMoniker": "FindDivisors\\FindDivisors.cpp",
-              "ToolTip": "C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp",
+              "ToolTip": "C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\FindDivisors\\FindDivisors.cpp",
               "RelativeToolTip": "FindDivisors\\FindDivisors.cpp",
-              "ViewState": "AgIAABEAAAAAAAAAAAAqwCQAAAADAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-27T09:37:01.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "sp_pract12_Savitsin.cpp",
-              "DocumentMoniker": "C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
+              "DocumentMoniker": "C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
               "RelativeDocumentMoniker": "sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
-              "ToolTip": "C:\\Program Files (x86)\\projects\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
+              "ToolTip": "C:\\Users\\st310-02\\Desktop\\\u0421\u0430\u0432\u0438\u0446\u0438\u043D \u041F\u0420-31\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
               "RelativeToolTip": "sp_pract12_Savitsin\\sp_pract12_Savitsin.cpp",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAqwAcBAAAQAAAAAAAAAA==",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-26T13:35:26.182Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 513,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

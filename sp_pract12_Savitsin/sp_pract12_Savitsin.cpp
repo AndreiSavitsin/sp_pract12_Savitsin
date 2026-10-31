@@ -50,9 +50,8 @@ void PrintMenu()
     std::cout << "1. Создание процессов\n";
     std::cout << "2. Принудительное завершение выбранных процессов\n";
     std::cout << "3. Отображение списка созданных процессов\n";
-    std::cout << "4. Отображение количества работающих процессов\n";
-    std::cout << "5. Передача аргументов командной строки при запуске процессов\n";
-    std::cout << "6. Выход\n";
+    std::cout << "4. Отображение количества работающих процессов\n";    
+    std::cout << "5. Выход\n";
 }
 
 int main(int argc, char* argv[])
@@ -87,7 +86,47 @@ int main(int argc, char* argv[])
             }
             else if (p == 2)
             {
-                StartProcess("C:\\Windows\\System32\\ping.exe", "C:\\Windows\\System32\\ping.exe 127.0.0.1", "ping");
+                std::cout << "Режимы ping:\n";
+                std::cout << "1. ping.exe [IP-address]\n";
+                std::cout << "2. ping.exe -n [N] [IP-address]\n";
+                std::cout << "3. ping.exe -t [IP-address]\n";
+                std::cout << "Выберите режим: ";
+                int mode;
+                std::cin >> mode;
+
+                std::string ip;
+                std::string args = " ";
+
+                if (mode == 1)
+                {
+                    std::cout << "Введите IP: ";
+                    std::cin >> ip;
+                    args += ip;
+                }
+                else if (mode == 2)
+                {
+                    int n;
+                    std::cout << "Введите N: ";
+                    std::cin >> n;
+
+                    std::cout << "Введите IP: ";
+                    std::cin >> ip;
+                    args += "-n " + std::to_string(n) + " " + ip;
+                }
+                else if (mode == 3)
+                {
+                    std::cout << "Введите IP: ";
+                    std::cin >> ip;
+                    args += "-t " + ip;
+                }
+                else
+                {
+                    std::cout << "Неверный режим\n";
+                    break;
+                }
+
+                std::string exePath = "C:\\Windows\\System32\\ping.exe";
+                StartProcess(exePath, exePath + args, "ping");
             }
             else if (p == 3)
             {
@@ -144,14 +183,7 @@ int main(int argc, char* argv[])
                     std::cout << "Не удалось завершить процесс\n";
                 }
 
-                CloseHandle(processes[index]->hProcess);
-                delete processes[index];
-
-                for (int i = index; i < procCount - 1; i++)
-                {
-                    processes[i] = processes[i + 1];
-                }
-                procCount--;
+                CloseHandle(processes[index]->hProcess);               
             }
             break;
         }
@@ -190,67 +222,12 @@ int main(int argc, char* argv[])
                 {
                     aliveCount++;
                 }
-                else
-                {                 
-                    CloseHandle(processes[i]->hProcess);
-                    delete processes[i];
-                 
-                    for (int j = i; j < procCount - 1; j++)
-                    {
-                        processes[j] = processes[j + 1];
-                    }
-                    procCount--;
-                }
             }
 
             std::cout << "Количество работающих процессов: " << aliveCount << std::endl;
             break;
-        }
+        }        
         case 5:
-        {
-            std::cout << "Режимы ping:\n";
-            std::cout << "1. ping.exe [IP-address]\n";
-            std::cout << "2. ping.exe -n [N] [IP-address]\n";
-            std::cout << "3. ping.exe -t [IP-address]\n";
-            std::cout << "Выберите режим: ";
-            int mode;
-            std::cin >> mode;
-
-            std::string ip;
-            std::string cmd = "ping.exe ";
-
-            if (mode == 1)
-            {
-                std::cout << "Введите IP: ";
-                std::cin >> ip;
-                cmd += ip;
-            }
-            else if (mode == 2)
-            {
-                int n;
-                std::cout << "Введите N: ";
-                std::cin >> n;
-
-                std::cout << "Введите IP: ";
-                std::cin >> ip;
-                cmd += "-n " + std::to_string(n) + " " + ip;
-            }
-            else if (mode == 3)
-            {
-                std::cout << "Введите IP: ";
-                std::cin >> ip;
-                cmd += "-t " + ip;
-            }
-            else
-            {
-                std::cout << "Неверный режим\n";
-                break;
-            }
-
-            StartProcess("C:\\Windows\\System32\\ping.exe", "C:\\Windows\\System32\\ping.exe " + cmd.substr(9), "ping");
-            break;
-        }
-        case 6:
         {
             exit = true;
 
