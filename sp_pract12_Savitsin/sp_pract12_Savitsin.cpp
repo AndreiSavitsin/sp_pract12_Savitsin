@@ -174,18 +174,26 @@ int main(int argc, char* argv[])
             {
                 int index = num - 1;
 
-                DWORD exitCode;
-                GetExitCodeProcess(processes[index]->hProcess, &exitCode);
-
-                if (exitCode == STILL_ACTIVE)
+                if (TerminateProcess(processes[index]->hProcess, 0))
                 {
-                    TerminateProcess(processes[index]->hProcess, 0);
                     std::cout << "Процесс завершен\n";
                 }
                 else
                 {
-                    std::cout << "Процесс уже завершен\n";
-                }                           
+                    std::cout << "Не удалось завершить процесс\n";
+                }
+
+                CloseHandle(processes[index]->hProcess);
+
+                delete processes[index];
+
+                for (int i = index; i < procCount - 1; i++)
+                {
+                    processes[i] = processes[i + 1];
+                }
+                procCount--;
+
+                processes[procCount] = nullptr;
             }
             break;
         }
@@ -234,17 +242,10 @@ int main(int argc, char* argv[])
             exit = true;
 
             for (int i = 0; i < procCount; i++)
-            {
-                if (processes[i]->hProcess != NULL)
-                {
-                    CloseHandle(processes[i]->hProcess);
-                }
-
-                if (processes[i] != nullptr)
-                {
-                    delete processes[i];
-                    processes[i] = nullptr;
-                }
+            {                
+                CloseHandle(processes[i]->hProcess);
+                delete processes[i];
+                processes[i] = nullptr;
             }
             break;
         }
